@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivAuthorPic"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:padding="@dimen/_1sdp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+        app:strokeColor="@color/nav_red_txt"
+        app:strokeWidth="@dimen/_1sdp" />
+
+    <TextView
+        android:id="@+id/tvAuthorName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="John Heater"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toStartOf="@+id/tvCommentDate"
+        app:layout_constraintStart_toEndOf="@id/ivAuthorPic"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCommentDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="10th April’21"
+        android:textColor="@color/gray_txt"
+        android:textSize="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="@id/tvAuthorName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvAuthorName" />
+
+    <TextView
+        android:id="@+id/tvAuthorComment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="@color/gray_txt"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvAuthorName"
+        app:layout_constraintTop_toBottomOf="@id/tvAuthorName"
+        tools:text="This was great. Love the single rounds, helped keep me going! Thanks Coaches" />
+
+    <TextView
+        android:id="@+id/tvReply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:text="@string/reply"
+        android:textColor="@color/nav_red_txt"
+        android:textSize="@dimen/_9sdp"
+        app:layout_constraintStart_toStartOf="@id/tvAuthorComment"
+        app:layout_constraintTop_toBottomOf="@id/tvAuthorComment" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/replyGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:constraint_referenced_ids="ivUserPic, tvUserName, tvUserComment" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivUserPic"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:padding="@dimen/_1sdp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="@id/tvReply"
+        app:layout_constraintTop_toBottomOf="@id/tvReply"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+        app:strokeColor="@color/nav_red_txt"
+        app:strokeWidth="@dimen/_1sdp" />
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivUserPic"
+        app:layout_constraintTop_toTopOf="@id/ivUserPic"
+        tools:text="HASFit" />
+
+    <!--<TextView
+        android:id="@+id/tvReplyDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/montserrat_regular"
+        tools:text="10th April’21"
+        android:textColor="@color/gray_txt"
+        android:textSize="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="@id/tvUserName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvUserName" />-->
+
+    <TextView
+        android:id="@+id/tvUserComment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="@color/gray_txt"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvUserName"
+        app:layout_constraintTop_toBottomOf="@id/tvUserName"
+        tools:text="Thank you soo much John. Keep Going!" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:alpha="0.2"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUserComment" />
+</androidx.constraintlayout.widget.ConstraintLayout>

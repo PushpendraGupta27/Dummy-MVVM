@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="nav_red_txt">#ED1A24</color>
+    <color name="nav_gray_txt">#B3B3B3</color>
+    <color name="white_smoke">#F5F5F5</color>
+    <color name="black_txt">#343434</color>
+    <color name="gray_txt">#6D6D6D</color>
+    <color name="indicator_gray">#CCCCCC</color>
+    <color name="mercury">#E6E6E6</color>
+    <color name="nobel">#979696</color>
+
+</resources>

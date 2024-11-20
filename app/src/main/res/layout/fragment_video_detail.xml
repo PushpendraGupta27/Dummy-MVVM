@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.VideoDetailFragment">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/black_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivShare"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/share_video"
+        app:layout_constraintBottom_toBottomOf="@id/ivBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+    <ImageView
+        android:id="@+id/ivSave"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/save_bookmark"
+        app:layout_constraintBottom_toBottomOf="@id/ivShare"
+        app:layout_constraintEnd_toStartOf="@id/ivShare"
+        app:layout_constraintTop_toTopOf="@id/ivShare" />
+
+    <ImageView
+        android:id="@+id/ivDownload"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/download"
+        app:layout_constraintBottom_toBottomOf="@id/ivSave"
+        app:layout_constraintEnd_toStartOf="@id/ivSave"
+        app:layout_constraintTop_toTopOf="@id/ivSave" />
+
+    <ImageView
+        android:id="@+id/ivRoku"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/roku"
+        app:layout_constraintBottom_toBottomOf="@id/ivDownload"
+        app:layout_constraintEnd_toStartOf="@id/ivDownload"
+        app:layout_constraintTop_toTopOf="@id/ivDownload" />
+
+    <androidx.mediarouter.app.MediaRouteButton
+        android:id="@+id/routeBtn"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/ivRoku"
+        app:layout_constraintEnd_toStartOf="@id/ivRoku"
+        app:layout_constraintTop_toTopOf="@id/ivRoku" />
+
+    <ImageView
+        android:id="@+id/ivChromeCasting"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/tv_casting"
+        app:layout_constraintBottom_toBottomOf="@id/ivRoku"
+        app:layout_constraintEnd_toStartOf="@id/ivRoku"
+        app:layout_constraintTop_toTopOf="@id/ivRoku" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/barrier1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivRoku">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivImg"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize5Percent" />
+
+            <TextView
+                android:id="@+id/tvVideoTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Shoulder’s Workout with Dumbbells"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintEnd_toEndOf="@id/ivImg"
+                app:layout_constraintStart_toStartOf="@id/ivImg"
+                app:layout_constraintTop_toBottomOf="@id/ivImg" />
+
+            <ImageView
+                android:id="@+id/ivClock"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:src="@drawable/clock"
+                app:layout_constraintBottom_toBottomOf="@id/tvTime"
+                app:layout_constraintStart_toStartOf="@id/tvVideoTitle"
+                app:layout_constraintTop_toTopOf="@id/tvTime" />
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="15 mins"
+                android:textColor="@color/gray_txt"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toEndOf="@id/ivClock"
+                app:layout_constraintTop_toBottomOf="@id/tvVideoTitle" />
+
+            <ImageView
+                android:id="@+id/ivCalories"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_marginStart="@dimen/_100sdp"
+                android:alpha="0.8"
+                android:src="@drawable/burn"
+                app:layout_constraintBottom_toBottomOf="@id/tvTime"
+                app:layout_constraintStart_toEndOf="@id/tvTime"
+                app:layout_constraintTop_toTopOf="@id/tvTime" />
+
+            <TextView
+                android:id="@+id/tvCalories"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="100-150"
+                android:textColor="@color/gray_txt"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@id/ivCalories"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivCalories"
+                app:layout_constraintTop_toTopOf="@id/ivCalories" />
+
+            <ImageView
+                android:id="@+id/ivRun"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:src="@drawable/run"
+                app:layout_constraintBottom_toBottomOf="@id/tvLevel"
+                app:layout_constraintStart_toStartOf="@id/ivClock"
+                app:layout_constraintTop_toTopOf="@id/tvLevel" />
+
+            <TextView
+                android:id="@+id/tvLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Intermediate, Advanced,Muscle Building"
+                android:textColor="@color/gray_txt"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@id/tvCalories"
+                app:layout_constraintStart_toEndOf="@id/ivRun"
+                app:layout_constraintTop_toBottomOf="@id/tvTime" />
+
+            <ImageView
+                android:id="@+id/ivEnergy"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:alpha="0.7"
+                android:src="@drawable/energy"
+                app:layout_constraintBottom_toBottomOf="@id/tvWorkoutType"
+                app:layout_constraintStart_toStartOf="@id/ivRun"
+                app:layout_constraintTop_toTopOf="@id/tvWorkoutType" />
+
+            <TextView
+                android:id="@+id/tvWorkoutType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Muscle Building, Muscle Building"
+                android:textColor="@color/gray_txt"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@id/tvLevel"
+                app:layout_constraintStart_toEndOf="@id/ivEnergy"
+                app:layout_constraintTop_toBottomOf="@id/tvLevel" />
+
+            <ImageView
+                android:id="@+id/ivMuscle"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:alpha="0.8"
+                android:src="@drawable/muscle"
+                app:layout_constraintBottom_toBottomOf="@id/tvMuscleBuilding"
+                app:layout_constraintStart_toStartOf="@id/ivEnergy"
+                app:layout_constraintTop_toTopOf="@id/tvMuscleBuilding" />
+
+            <TextView
+                android:id="@+id/tvMuscleBuilding"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Muscle Building, Muscle Building"
+                android:textColor="@color/gray_txt"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@id/tvWorkoutType"
+                app:layout_constraintStart_toEndOf="@id/ivMuscle"
+                app:layout_constraintTop_toBottomOf="@id/tvWorkoutType" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/tab_bg1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMuscleBuilding"
+                app:tabBackground="@drawable/tab_background_selector"
+                app:tabIndicatorAnimationMode="linear"
+                app:tabIndicatorHeight="0dp"
+                app:tabRippleColor="@null"
+                app:tabTextAppearance="@style/TabLayoutTextAppearance" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tabLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="commentGroup,btnStartWorkout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStartWorkout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@drawable/btn_red_bg"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:text="Start Workout"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14sdp"
+        android:visibility="gone"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/commentGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:id="@+id/viewUp"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:alpha="0.2"
+            android:background="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/tvViewAllComments"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvViewAllComments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:padding="@dimen/_2sdp"
+            android:textColor="@color/nav_red_txt"
+            android:textSize="@dimen/_12sdp"
+            app:drawableEndCompat="@drawable/comment_arrow"
+            app:layout_constraintBottom_toTopOf="@id/viewDown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="View All 23 Comments" />
+
+        <View
+            android:id="@+id/viewDown"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:alpha="0.2"
+            android:background="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/textInputComment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputComment"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/comment_edit_text"
+            android:fontFamily="@font/montserrat_medium"
+            app:boxStrokeColor="@android:color/transparent"
+            app:hintEnabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivSend"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearance="@style/RoundedReferral">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/montserrat_semibold"
+                android:hint="Add your Comment"
+                android:imeOptions="actionDone"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxHeight="@dimen/_43sdp"
+                android:maxLength="256"
+                android:textColor="@color/black"
+                android:textColorHint="@color/nobel"
+                android:textSize="@dimen/_12sdp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/ivSend"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:src="@drawable/comment_send"
+            app:layout_constraintBottom_toBottomOf="@id/textInputComment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textInputComment"
+            app:layout_constraintTop_toTopOf="@id/textInputComment" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/nav_red_txt"
+        android:indeterminateTintMode="src_atop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

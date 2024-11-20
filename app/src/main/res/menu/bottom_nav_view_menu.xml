@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:enabled="true"
+        android:icon="@drawable/home"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/programsFragment"
+        android:enabled="true"
+        android:icon="@drawable/programs"
+        android:title="Programs"/>
+
+    <item
+        android:id="@+id/searchFragment"
+        android:enabled="true"
+        android:icon="@drawable/search"
+        android:title="Search"
+        />
+
+    <item
+        android:id="@+id/savedFragment"
+        android:enabled="true"
+        android:icon="@drawable/saved"
+        android:title="Saved"/>
+</menu>

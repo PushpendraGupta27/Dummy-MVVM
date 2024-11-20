@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.CommentsFragment">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/client"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="ivClientPic,tvClientName,tvQue" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivClientPic"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:padding="@dimen/_1sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/comments_default_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+        app:strokeColor="@color/nav_red_txt"
+        app:strokeWidth="@dimen/_1sdp" />
+
+    <TextView
+        android:id="@+id/tvClientName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Claudia &amp; Coach Kozak"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@id/tvQue"
+        app:layout_constraintStart_toEndOf="@id/ivClientPic"
+        app:layout_constraintTop_toTopOf="@id/ivClientPic" />
+
+    <TextView
+        android:id="@+id/tvQue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="How did your workout go?"
+        android:textColor="@color/gray_txt"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@id/ivClientPic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvClientName"
+        app:layout_constraintTop_toBottomOf="@id/tvClientName" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvComments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:nestedScrollingEnabled="false"
+        android:overScrollMode="never"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_video_all_comments" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

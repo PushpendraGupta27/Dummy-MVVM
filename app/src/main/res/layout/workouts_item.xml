@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_175sdp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_7sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="@dimen/_2sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_smoke">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivWorkout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/_5sdp"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/RoundTopCorner8dp" />
+
+        <ImageView
+            android:id="@+id/ivSave"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:padding="@dimen/_3sdp"
+            android:src="@drawable/unmarked"
+            app:layout_constraintStart_toStartOf="@id/ivWorkout"
+            app:layout_constraintTop_toTopOf="@id/ivWorkout" />
+
+        <TextView
+            android:id="@+id/tvPostName"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat_semibold"
+            android:maxLines="2"
+            android:text="Shoulder’s Workout with Dumbbells"
+            android:textColor="@color/black_txt"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@id/tvTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ivWorkout"
+            app:layout_constraintTop_toBottomOf="@id/ivWorkout" />
+
+        <ImageView
+            android:id="@+id/ivClock"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:src="@drawable/clock"
+            app:layout_constraintBottom_toTopOf="@id/ivRun"
+            app:layout_constraintStart_toStartOf="@id/tvPostName"
+            app:layout_constraintTop_toBottomOf="@id/tvPostName" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_3sdp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="15 mins"
+            android:textColor="@color/gray_txt"
+            android:textSize="@dimen/_9sdp"
+            app:layout_constraintBottom_toBottomOf="@id/ivClock"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivClock"
+            app:layout_constraintTop_toTopOf="@id/ivClock" />
+
+        <ImageView
+            android:id="@+id/ivRun"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginBottom="@dimen/_7sdp"
+            android:src="@drawable/run"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ivClock"
+            app:layout_constraintTop_toBottomOf="@id/ivClock" />
+
+        <TextView
+            android:id="@+id/tvWorkoutMode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_3sdp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Intermediate, Advanced"
+            android:textColor="@color/gray_txt"
+            android:textSize="@dimen/_9sdp"
+            app:layout_constraintBottom_toBottomOf="@id/ivRun"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivRun"
+            app:layout_constraintTop_toTopOf="@id/ivRun" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
