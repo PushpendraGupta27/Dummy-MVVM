@@ -10,5 +10,6 @@
     <color name="indicator_gray">#CCCCCC</color>
     <color name="mercury">#E6E6E6</color>
     <color name="nobel">#979696</color>
+    <color name="gray87">#DEDEDE</color>
 
 </resources>

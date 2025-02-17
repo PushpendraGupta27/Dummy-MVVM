@@ -241,20 +241,32 @@
                 app:layout_constraintStart_toEndOf="@id/ivMuscle"
                 app:layout_constraintTop_toBottomOf="@id/tvWorkoutType" />
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabLayout"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginHorizontal="@dimen/_15sdp"
+            <View
+                android:id="@+id/tabView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginHorizontal="@dimen/_25sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/tab_bg1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvMuscleBuilding"
+                app:layout_constraintTop_toBottomOf="@id/tvMuscleBuilding" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:background="@drawable/tab_bg1"
+                app:layout_constraintEnd_toEndOf="@id/tabView"
+                app:layout_constraintStart_toStartOf="@id/tabView"
+                app:layout_constraintTop_toTopOf="@id/tabView"
+                app:layout_constraintBottom_toBottomOf="@id/tabView"
                 app:tabBackground="@drawable/tab_background_selector"
                 app:tabIndicatorAnimationMode="linear"
                 app:tabIndicatorHeight="0dp"
                 app:tabRippleColor="@null"
+                app:tabPadding="@dimen/_5sdp"
                 app:tabTextAppearance="@style/TabLayoutTextAppearance" />
 
             <androidx.viewpager2.widget.ViewPager2

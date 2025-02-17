@@ -4,6 +4,7 @@ import com.mvvmproject.domain.response.AllWorkOutResponse
 import com.mvvmproject.domain.response.CarouselListResponse
 import com.mvvmproject.domain.response.IndividualWorkoutApiResponse
 import com.mvvmproject.domain.response.NewWorkoutResponse
+import com.mvvmproject.domain.response.WorkoutSearchAttributesRes
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Field
@@ -28,4 +29,9 @@ interface ApiInterface {
         @Field("post_id") postId: Int?,
         @Field("timezone") timeZone: String?,
     ): Response<IndividualWorkoutApiResponse>
+
+    @POST("get_workout_search_attributes")
+    suspend fun workoutSearchAttributes(
+        @Header("Auth-Token") token: String?,
+    ): Response<WorkoutSearchAttributesRes>
 }

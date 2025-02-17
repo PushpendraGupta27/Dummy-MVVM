@@ -1,14 +1,276 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/white_smoke"
+tools:context=".ui.SearchFragment">
+
+<androidx.constraintlayout.widget.Group
+    android:id="@+id/searchViewGroup"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.SearchFragment">
+    android:visibility="invisible"
+    app:constraint_referenced_ids="tvMin,tvWorkoutLength,sliderRange,ivBack,tvSearch, scrollView, bottomView,btnSearch,tvClear" />
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<ImageView
+    android:id="@+id/ivBack"
+    android:layout_width="@dimen/_25sdp"
+    android:layout_height="@dimen/_25sdp"
+    android:layout_margin="@dimen/_8sdp"
+    android:padding="@dimen/_5sdp"
+    android:src="@drawable/black_arrow"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+    android:id="@+id/tvSearch"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_2sdp"
+    android:fontFamily="@font/montserrat_bold"
+    android:text="Search"
+    android:textColor="@color/black"
+    android:textSize="@dimen/_18sdp"
+    app:layout_constraintBottom_toBottomOf="@id/ivBack"
+    app:layout_constraintStart_toEndOf="@id/ivBack"
+    app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+<TextView
+    android:id="@+id/tvWorkoutLength"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_15sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:fontFamily="@font/montserrat_semibold"
+    android:text="Workout Length"
+    android:textColor="@color/black"
+    android:textSize="@dimen/_14sdp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/tvMin"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tvSearch" />
+
+<TextView
+    android:id="@+id/tvMin"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_2sdp"
+    android:fontFamily="@font/montserrat_semibold"
+    android:text="(In Minutes)"
+    android:textColor="@color/black_txt"
+    android:textSize="@dimen/_12sdp"
+    app:layout_constraintBottom_toBottomOf="@id/tvWorkoutLength"
+    app:layout_constraintStart_toEndOf="@id/tvWorkoutLength"
+    app:layout_constraintTop_toTopOf="@id/tvWorkoutLength" />
+
+<com.google.android.material.slider.RangeSlider
+    android:id="@+id/sliderRange"
+    style="@style/SliderStyle"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_minus1sdp"
+    android:layout_marginEnd="@dimen/_15sdp"
+    android:stepSize="5"
+    android:valueFrom="5"
+    android:valueTo="60"
+    app:labelBehavior="visible"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tvWorkoutLength"
+    app:thumbColor="@color/white_smoke"
+    app:thumbStrokeColor="@color/nav_red_txt"
+    app:thumbStrokeWidth="@dimen/_2sdp"
+    app:tickVisible="false"
+    app:trackColor="@null"
+    app:trackColorActive="@color/nav_red_txt"
+    app:trackColorInactive="@color/gray87"
+    app:values="@array/rangeSliderValues" />
+
+<androidx.core.widget.NestedScrollView
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:overScrollMode="never"
+    app:layout_constraintBottom_toTopOf="@id/bottomView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/sliderRange">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/tvFitnessLevel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Fitness Level"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFitnessLevel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvFitnessLevel"
+            tools:listitem="@layout/custom_chip" />
+
+        <TextView
+            android:id="@+id/tvEquipment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Equipment"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvFitnessLevel" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvEquipment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEquipment"
+            app:spanCount="2"
+            tools:listitem="@layout/item_checkbox" />
+
+        <TextView
+            android:id="@+id/tvMuscleGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Muscle Group"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvEquipment" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMuscleGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMuscleGroup"
+            tools:listitem="@layout/custom_chip" />
+
+        <TextView
+            android:id="@+id/tvWorkoutType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Workout Type"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvMuscleGroup" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvWorkoutType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWorkoutType"
+            app:spanCount="2"
+            tools:listitem="@layout/item_checkbox" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+
+<View
+    android:id="@+id/bottomView"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_60sdp"
+    android:background="@drawable/top_round_cornered_bg"
+    android:elevation="@dimen/_5sdp"
+    app:layout_constraintBottom_toBottomOf="parent" />
+
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/btnSearch"
+    style="@style/Widget.MaterialComponents.Button.TextButton"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_15sdp"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:background="@drawable/btn_red_bg"
+    android:elevation="@dimen/_5sdp"
+    android:fontFamily="@font/sf_pro_text_bold"
+    android:gravity="center"
+    android:letterSpacing="0"
+    android:text="Search"
+    android:textAllCaps="false"
+    android:textColor="@color/white"
+    android:textSize="@dimen/_14sdp"
+    app:backgroundTint="@null"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/tvClear"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@id/bottomView" />
+
+<TextView
+    android:id="@+id/tvClear"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/_15sdp"
+    android:elevation="@dimen/_5sdp"
+    android:fontFamily="@font/sf_pro_text_regular"
+    android:text="Clear"
+    android:textColor="@color/black_txt"
+    android:textSize="@dimen/_14sdp"
+    app:layout_constraintBottom_toBottomOf="@id/btnSearch"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="@id/btnSearch" />
+
+<ProgressBar
+    android:id="@+id/progressBar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:indeterminate="true"
+    android:indeterminateTint="@color/nav_red_txt"
+    android:indeterminateTintMode="src_atop"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

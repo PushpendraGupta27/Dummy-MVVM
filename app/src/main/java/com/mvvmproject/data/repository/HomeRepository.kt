@@ -17,5 +17,4 @@ class HomeRepository @Inject constructor(private val apiInterface: ApiInterface)
 
     suspend fun allWorkoutApi(token: String): Response<AllWorkOutResponse> =
         apiInterface.getAllWorkout(token)
-
 }

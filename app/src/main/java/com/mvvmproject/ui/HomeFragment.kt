@@ -119,6 +119,18 @@ class HomeFragment : Fragment() {
                     bundleOf("postId" to model.postId)
                 )
             }
+            "save" -> {
+                when (model.favoriteFlag) {
+                    0 -> {
+                        model.favoriteFlag = 1
+                    }
+
+                    else -> {
+                        model.favoriteFlag = 0
+                    }
+                }
+                newWorkoutAdapter.notifyItemChanged(pos)
+            }
         }
     }
 
@@ -178,6 +190,11 @@ class HomeFragment : Fragment() {
             when (it) {
                 is Resource.Loading -> binding.progressBar.show()
                 is Resource.Success -> {
+                    when(it.code){
+                        200->{
+                            
+                        }
+                    }
                     binding.progressBar.remove()
                     binding.homeGroup.show()
                     binding.tvNewWorkout.text =

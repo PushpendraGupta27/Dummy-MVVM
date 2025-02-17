@@ -40,4 +40,17 @@
         <item name="cornerSizeTopRight">8dp</item>
         <item name="cornerSizeBottomRight">8dp</item>
     </style>
+    <style name="SliderStyle" parent="@style/Widget.MaterialComponents.Slider">
+        <item name="labelStyle">@style/TooltipStyle</item>
+    </style>
+    <style name="TooltipStyle" parent="Widget.MaterialComponents.Tooltip">
+        <!-- background color of the Tooltip -->
+        <item name="backgroundTint">@color/nav_red_txt</item>
+        <item name="android:textAppearance">@style/MyTooltip.TextAppearance</item>
+    </style>
+    <style name="MyTooltip.TextAppearance" parent="@style/TextAppearance.MaterialComponents.Tooltip">
+        <item name="android:textColor">@color/white_smoke</item>
+        <item name="fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">@dimen/_8sdp</item>
+    </style>
 </resources>

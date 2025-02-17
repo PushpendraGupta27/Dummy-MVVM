@@ -3,6 +3,6 @@ package com.mvvmproject.utils
 object AppConstants {
 
     //Staging
-    const val BASE_URL = "https://api-hasfit.mobileappdevelopmentservices.com/api/v13/"
-    const val TOKEN = "a2c1ac171a5feae68d2f99f132fcdd0e"
+    const val BASE_URL = "https://hasfit-api.appdevelopmentservices.in/api/v14/"
+    const val TOKEN = "7dc4d6219d7b5cb514d934ca64c6f808"
 }

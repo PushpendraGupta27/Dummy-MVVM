@@ -88,4 +88,8 @@ dependencies {
     implementation(libs.androidx.mediarouter)
     implementation(libs.android.query)
     implementation(libs.play.services.cast.framework)
+
+    implementation (libs.jmdns)
+    // Flexbox
+    implementation (libs.flexbox)
 }
